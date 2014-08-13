@@ -76,16 +76,19 @@ public class QuickHome extends JavaPlugin implements Listener
 						{
 							if (realRegion.getOwners().getPlayers().size() == 0 )
 							{
-								availableHouses = availableHouses + "\n" + ChatColor.DARK_AQUA + regionName;
+                                int xVector =  (int) (realRegion.getMaximumPoint().getX() - realRegion.getMinimumPoint().getX())+1;
+                                int zVector = (int) (realRegion.getMaximumPoint().getZ() - realRegion.getMinimumPoint().getZ())+1;
+                                int regionSize = xVector*zVector;
+                                availableHouses = availableHouses + "\n" + ChatColor.DARK_AQUA + regionName + ChatColor.GOLD + " (" + regionSize + ")";
 							}
 							else if (realRegion.getOwners().getPlayers().size() == 1 )
 							{
-								availableHouses = availableHouses + "\n" + ChatColor.AQUA + regionName ;
+                                int xVector =  (int) (realRegion.getMaximumPoint().getX() - realRegion.getMinimumPoint().getX())+1;
+                                int zVector = (int) (realRegion.getMaximumPoint().getZ() - realRegion.getMinimumPoint().getZ())+1;
+                                int regionSize = xVector*zVector;
+								availableHouses = availableHouses + "\n" + ChatColor.AQUA + regionName + ChatColor.GOLD + " (" + regionSize + ")";
 							}
-							else if (realRegion.getOwners().getPlayers().size() == 2 )
-							{
-							}
-							else
+							else if (realRegion.getOwners().getPlayers().size() != 2 )
 							{
 								availableHouses = availableHouses +  "\n" + ChatColor.RED + regionName + " has 3 or more owners!";
 							}
