@@ -1,0 +1,8 @@
+main: com.gmail.ak1cec0ld.plugins.QuickHome.QuickHome
+name: QuickHome
+version: 15
+author: [Paradox1123, 1cec0ld]
+description: Show all WorldGuard regions that qualify as available using PokemonServer standards.
+commands:
+  houses:
+    description: Show the Key and List all houses.
